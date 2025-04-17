@@ -23,8 +23,6 @@ const ProductSwiper: React.FC<ProductSwiperProps> = ({
   onFinished,
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [likedProducts, setLikedProducts] = useState<Product[]>([])
-  const [savedProducts, setSavedProducts] = useState<Product[]>([])
   const [hasShownDemo, setHasShownDemo] = useState(false)
 
   const currentProduct = products[currentIndex]
@@ -41,7 +39,6 @@ const ProductSwiper: React.FC<ProductSwiperProps> = ({
     if (!canSwipe) return
 
     onProductLike?.(currentProduct)
-    setLikedProducts((prev) => [...prev, currentProduct])
     setCurrentIndex((prevIndex) => prevIndex + 1)
   }
 
@@ -49,7 +46,6 @@ const ProductSwiper: React.FC<ProductSwiperProps> = ({
     if (!canSwipe) return
 
     onProductSave?.(currentProduct)
-    setSavedProducts((prev) => [...prev, currentProduct])
     setCurrentIndex((prevIndex) => prevIndex + 1)
   }
 
@@ -70,7 +66,7 @@ const ProductSwiper: React.FC<ProductSwiperProps> = ({
           <div className="w-10" />
         </div>
 
-        <div className="flex-1 relative flex items-center justify-center overflow-hidden pt-[60px]">
+        <div className=" flex-1 relative flex items-center justify-center overflow-hidden pt-[60px]">
           <div className="relative w-full h-full flex items-center justify-center">
             <AnimatePresence>
               {canSwipe &&

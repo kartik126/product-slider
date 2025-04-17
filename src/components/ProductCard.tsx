@@ -107,7 +107,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onSwipeLeft, onSwipe
   return (
     <AnimatePresence>
       <motion.div
-        className="absolute w-[calc(100vw-16px)] max-w-[420px] h-[calc(100vh-140px)] bg-white rounded-2xl overflow-hidden"
+        className="absolute sm:px-1 w-[calc(100vw-16px)] max-w-[420px] h-[calc(100vh-140px)] bg-white rounded-2xl overflow-hidden"
         style={{
           x,
           y,
